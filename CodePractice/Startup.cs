@@ -56,8 +56,15 @@ namespace CodePractice
             #endregion
 
             #region LeetCode LeetCodePractice Invocations
-            LetterCombinationsOfPhoneNumber("297");
+            //LetterCombinationsOfPhoneNumber("297");
             #endregion
+
+            LinkedList myLinkedList = new LinkedList();
+            myLinkedList.Add(5);
+            myLinkedList.Add(3);
+            myLinkedList.Add(2);
+
+            myLinkedList.printAllNodes();
         }
 
         // Helper method achieving the method:

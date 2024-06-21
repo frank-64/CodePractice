@@ -1,12 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CodePractice
+﻿namespace CodePractice
 {
+    public class Node
+    {
+        public Node() { }
+
+        public int Value {  get; set; }
+        public Node next { get; set; }
+    }
+
+    public class LinkedList {
+        private Node head;
+
+        public void printAllNodes()
+        {
+            Node current = head;
+            while (current != null) 
+            {
+                Console.Write(current.Value);
+                current = current.next;
+            }
+            Console.WriteLine();
+        }
+
+        public void Add(int integer)
+        {
+            Node toAdd = new Node();
+            toAdd.Value = integer;
+
+            if (head == null)
+            {
+                head = toAdd;
+            }
+            else
+            {
+                Node current = head;
+                while(current.next != null) 
+                {
+                    current = current.next;
+                }
+                current.next = toAdd;
+            }
+        }
+    }
+
     public class LeetCodePractice
     {
         public static Dictionary<int, string[]> phoneNumberLetters = new Dictionary<int, string[]> {
@@ -19,7 +55,6 @@ namespace CodePractice
             { 8, new string[] { "t", "u", "v" } },
             { 9, new string[] { "w", "x", "y", "z" } }
         };
-
 
         // https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
         public static IList<string> LetterCombinationsOfPhoneNumber(string digits)
